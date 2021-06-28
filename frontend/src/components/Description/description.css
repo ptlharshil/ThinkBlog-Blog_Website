@@ -1,0 +1,15 @@
+.description{
+    color: white;  
+    text-align: center;
+    padding-top: 120px;
+    font-size: 30px;
+}
+
+.descriptionContainer{
+    margin-top: 8px ;
+    width: 50%;
+    height: 295px;
+    background: rgb(221, 87, 110);
+    border-radius: 20px;
+    
+}

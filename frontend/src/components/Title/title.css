@@ -1,0 +1,20 @@
+.title{
+    color: white;  
+    text-align: center;
+    padding-top: 90px;
+    font-size: 100px;
+    white-space: nowrap;
+}
+
+.titleContainer{
+    width: 50%;
+    height: 295px;
+    border-radius: 20px;
+    animation: colors 4s linear infinite alternate;
+    background-color: rgb(219, 219, 18);
+}
+@keyframes colors{
+    0%{background-color: red}
+    50%{background-color:blue}
+    100%{background-color: orange;}
+}
