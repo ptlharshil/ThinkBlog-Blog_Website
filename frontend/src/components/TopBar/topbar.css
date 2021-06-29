@@ -1,0 +1,27 @@
+.topbar{
+    width: 48%;
+    float: right;
+    margin: 5px 0px 0px -50px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+
+
+.signin{
+    color: white;
+    cursor: pointer;
+    margin: 0px 0px 2px 410px;
+}
+.signin:hover{
+    color: green;
+}
+.getstarted{
+    margin: -20px 0px 0px 490px;
+    color: white;
+    cursor: pointer;
+}
+.getstarted:hover{
+    color: blue;
+}

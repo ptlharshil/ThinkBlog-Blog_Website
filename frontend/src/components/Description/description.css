@@ -1,8 +1,8 @@
 .description{
     color: white;  
-    text-align: center;
-    padding-top: 120px;
-    font-size: 30px;
+    
+    padding-top: 10px;
+    font-size: 50px;
 }
 
 .descriptionContainer{
@@ -13,3 +13,146 @@
     border-radius: 20px;
     
 }
+.list{
+    list-style: none;
+    /* text-align: center; */
+    color: white;
+}
+
+.music{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left:0px;
+    margin-top: 10px;
+}
+.music:hover{
+
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+
+.life{
+    
+    cursor: pointer;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 120px;
+}
+.life:hover{
+
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+
+.sport{
+    cursor: pointer;
+    font-size: 30px;
+    margin: 5px 40px 0px 200px;
+}
+.sport:hover{
+
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+.lifestyle{
+    cursor: pointer;
+    font-size: 30px;
+    margin: 8px 40px 0px 290px;
+}
+.lifestyle:hover{
+
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+.technology{
+    cursor: pointer;
+    font-size: 30px;
+    margin: 8px 40px 0px 410px;
+}
+.technology:hover{
+
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 1s infinite alternate;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-1px);
+    }
+  }
+  
