@@ -1,9 +1,13 @@
 import Home from "../src/Pages/Home/home"
+import TopBar from "../src/components/TopBar/topbar"
+import Single from "./Pages/Single/single"
 function App() {
   return (
-    <div className="App">
-     <Home/>
-    </div>
+    <>
+    <TopBar/>
+     {/* <Home/> */}
+    <Single/>
+    </>
   );
 }
 
