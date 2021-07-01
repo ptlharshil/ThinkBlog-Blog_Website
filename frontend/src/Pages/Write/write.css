@@ -1,0 +1,67 @@
+.write{
+    padding-top: 50px;
+    animation: colors 4s linear infinite alternate;
+    background-color: rgb(219, 219, 18);
+}
+@keyframes colors{
+    0%{background-color: red}
+    50%{background-color:blue}
+    100%{background-color: orange;}
+}
+.writeformgroup{
+    margin-left: 200px;
+    
+}
+.writeinput{
+    font-size: 30px;
+    padding: 5px;
+    width: 50vw;
+    border: 1px solid black;
+}
+.writeform{
+    background-color: white;
+    width: 85%;
+    height: 860px;
+    margin: 10px 0px 0px 92px;
+    border-radius: 60px;
+    position: relative;
+}
+.writetext{
+    font-size: 30px;
+    /* padding: 5px; */
+    width: 50vw;
+    border: 1px solid black;
+    padding: 150px;
+    border: 1px solid black;
+    margin: 70px 100px 0px -135px;
+}
+.writesubmit{
+    margin: 20px 0px 0px 900px;
+}
+.writetitle{
+    
+    margin: 30px -30px -40px -20px;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    width: 50vw;
+    border: 1px solid black;
+}
+.attach{
+    margin: 20px 90px 0px -80px;
+}
+.writeimg{
+
+    border-radius: 60px;
+    width: 80%;
+    height: 200px;
+    margin-top: 30px;
+    margin-left: 105px;
+}
+.writesubmit{
+    border: none;
+    background-color: teal;
+    color: white;
+    padding: 10px 25px 10px 25px;
+    margin: 20px 0px 0px 904px;
+}
