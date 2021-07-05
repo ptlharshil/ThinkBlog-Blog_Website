@@ -4,31 +4,28 @@ import blog from "../../components/images/blog.jpg"
 export default function Settings() {
     return (
         <div className="settings">
+
             <div className="settingwrapper">
-                <div className="settingstitle">
-                    <span className="settingsupdatetitle">
-                        Update your Account
-                    </span>
-                    <span className="settingsdeletetitle">
-                        Delete Account
-                    </span>
-                </div>
+                
                 <form className="settingsform">
-                    <label >Profile Picture</label>
+                    
                     <div className="settingsPP">
-                        <img src={blog} alt="" />
+                        <img src={blog} alt="" className="settingsImg"/>
                         <label htmlFor="fileInput" className="settingsPPicon">
                             + Attach
                         </label>
                         <input type="file" id="fileInput" style={{display:'none'}}/>
                     </div>
-                    <label>Username</label>
-                    <input type="text" placeholder="XYZ"/>
-                    <label>Email</label>
-                    <input type="email" placeholder="Email"/>
-                    <label>Password</label>
-                    <input type="password" placeholder="Password"/>
-                    <button className="settingssubmit">Update</button>
+
+                    <label className="user">Username</label>
+
+                    <input type="text" placeholder="Username" className="username"/>
+                    <label className="email">Email</label>
+                    <input type="email" placeholder="Email" className="mail"/>
+                    <label className="password">Password</label>
+                    <input type="password" placeholder="Password" className="pass"/>
+                    <button className="settingssubmit"><b>Update</b></button>
+                    <button className="settingsdelete"><b>Delete</b></button>
                 </form>
             </div>
         </div>

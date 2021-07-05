@@ -1,0 +1,86 @@
+.settings{
+    padding-top: 50px;
+    height: 550px;
+    animation: colors 4s linear infinite alternate;
+    background-color: rgb(219, 219, 18);
+}
+@keyframes colors{
+    0%{background-color: red}
+    50%{background-color:blue}
+    100%{background-color: orange;}
+}
+
+.settingsImg{
+    border-radius: 60px;
+    width: 25%;
+    height: 200px;
+    margin: 80px 0px 0px 377px;
+    
+}
+.pp{
+    margin: 100px 0px 0px 30px;
+}
+
+.settingwrapper{
+    background-color: white;
+    width: 85%;
+    height: 545px;
+    border-radius: 60px;
+    margin: 5px 0px 0px 90px;
+}
+
+.user{
+    margin: 30px 0px 0px 370px;
+    display: block;
+}
+.username{
+    margin: -20px 0px 0px 460px;
+    width: 180px;
+    display: block;
+}
+.email{
+    margin: 30px 0px 0px 404px;
+    display: block;
+}
+
+.mail{
+    margin: -20px 0px 0px 460px;
+    width: 180px;
+    display: block;
+}
+
+.password{
+    margin: 30px 0px 0px 375px;
+    display: block;
+}
+.pass{
+    margin: -20px 0px 0px 460px;
+    width: 180px;
+    display: block;
+}
+
+.settingssubmit{
+    margin: 20px 0px 0px 420px;
+    background: none;
+    display: block;
+    border: none;
+    color: teal;
+    font-style: italic;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.settingsdelete{
+    margin: -25px 0px 0px 520px;
+    background: none;
+    display: block;
+    border: none;
+    color: tomato;
+    font-style: italic;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.settingsPPicon{
+    cursor: pointer;
+}

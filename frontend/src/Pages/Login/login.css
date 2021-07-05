@@ -1,0 +1,46 @@
+.login{
+    height: 599px;
+    background: linear-gradient(to right,
+    red 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, blue 80%);
+}
+.l{
+    color: red;
+}
+.loginwrapper{
+    width: 30%;
+    height: 350px;
+    background-color: white;
+    border-radius: 60px;
+    margin: 130px 0px 0px 440px;
+}
+
+.loginform{
+    text-align: center;
+    padding: 30px;  
+}
+
+.loginUsername{
+    margin: 40px ;
+    width: 70%;
+    height: 40px;
+    
+}
+
+.loginPass{
+    width: 70%;
+    height: 40px;
+}
+
+.loginbutton{
+    background: none;
+    border: none;
+    margin: 40px;
+    color: teal;
+    font-style: italic;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.loginbutton:hover{
+    color: red;
+}

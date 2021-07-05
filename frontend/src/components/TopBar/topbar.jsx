@@ -1,12 +1,13 @@
 import React from 'react'
 import "./topbar.css"
+import {Link} from "react-router-dom"
 export default function topbar() {
     return (
         <>
            <div className="topbar">
-                <h4 className="explore">Explore</h4>
-                <h4 className="signin">Sign In</h4>
-                <h4 className="getstarted">Get Started</h4>
+                <h4 className="explore"><Link to="/" style={{textDecoration:"none", color:"inherit"}}>Explore</Link></h4>
+                <h4 className="signin"><Link to="/login" style={{textDecoration:"none", color:"inherit"}}>Sign In</Link></h4>
+                <h4 className="getstarted"><Link to="/signup" style={{textDecoration:"none", color:"inherit"}}>Get Started</Link></h4>
             </div> 
         </>
     )
