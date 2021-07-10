@@ -1,9 +1,22 @@
 import React from 'react'
 import blog from "../images/blog.jpg"
 import "./singlepost.css"
+
 export default function singlepost() {
     return (
-        <div className="singlepost">
+       
+        
+        <div className="sp">
+            <span>.</span>
+
+            <div className="singlesidebar">
+            
+            <img src={blog} alt="" id="pp" />
+            <h4 className="usname">Author: XYZ</h4>
+            <h4 className="ctname">Category: Sport</h4>
+            
+            </div>
+
             <div className="singlepostcontainer">
                
                 <img src={blog} 
@@ -55,6 +68,8 @@ export default function singlepost() {
                 Billy Graham crusades.
                 </p>
             </div>
+            
         </div>
+        
     )
 }

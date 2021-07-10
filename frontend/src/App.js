@@ -8,44 +8,46 @@ import SignUp from "./Pages/SignUp/Signup"
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 function App() {
+const user=false;
+
   return (
     <Router>
-      
+       <TopBar/>
         <Switch>
           <Route exact path="/">
-          <TopBar/>
+
             <Home />
           </Route>
         
         
           <Route  path="/login">
-          <TopBar/>
-            <Login />
+  
+          {user ? <Login  />: <Home/>}
           </Route>
         
         
           <Route path="/signup">
-          <TopBar/>
-            <SignUp  />
+      
+            {user ? <SignUp  />:<Home/> }
           </Route>
-        
+         
         
           <Route path="/post/:postId">
-          <TopBar/>
+  
             <Single  />
           </Route>
         
 
         
           <Route path="/write">
-          <TopBar/>
-            <Write />
+          
+            {user ? <Write /> : <SignUp/>}
           </Route>
         
         
           <Route path="/settings">
-          <TopBar/>
-            <Settings  />
+        
+          {user ? <Settings /> : <SignUp/>}
           </Route>
 
         </Switch>

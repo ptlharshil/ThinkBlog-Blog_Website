@@ -12,7 +12,7 @@
 .signin{
     color: white;
     cursor: pointer;
-    margin: -22px 0px 0px 385px;
+    margin: -22px 0px 0px 390px;
     
 }
 .signin:hover{
@@ -29,7 +29,7 @@
 .explore{
     color: white;
     cursor: pointer;
-    margin: 5px 16px 2px 270px;
+    margin: 5px 16px 2px 274px;
 }
 .explore:hover{
     color: yellow;

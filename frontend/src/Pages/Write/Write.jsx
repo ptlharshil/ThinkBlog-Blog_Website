@@ -3,6 +3,7 @@ import "./write.css"
 import blog from "../../components/images/blog.jpg"
 
 export default function Write() {
+    
     return (
         <div className="write">
             

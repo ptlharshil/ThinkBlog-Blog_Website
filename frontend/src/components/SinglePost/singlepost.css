@@ -3,12 +3,13 @@
     width: 80%;
     height: 200px;
     margin-top: 30px;
-    margin-left: 100px;
+    margin-left: 80px;
 }
-.singlepost{
+.sp {
+    max-width: 100%;
     animation: colors 4s linear infinite alternate;
     background-color: rgb(219, 219, 18);
-    margin: -90px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 @keyframes colors{
     0%{background-color: red}
@@ -17,10 +18,12 @@
 }
 
 .singlepostcontainer{
+    
     background-color: white;
-    width: 85%;
+    width: 65%;
     border-radius: 60px;
-    margin: 90px 0px 0px 85px;
+    margin: 60px 0px 0px 55px;
+    
 }
 .singleposttitle{
     text-align: center;
@@ -62,4 +65,27 @@
     margin-left: 30px;
     font-size: 35px;
     font-weight: 600;
+}
+
+.singlesidebar{
+    width: 25%;
+    height: 390px;
+    background-color: white;
+    border-radius: 60px;
+    position: static;
+    margin: 78px 0px -449px 890px;
+    align-items: center;
+    text-align: center;
+}
+
+#pp{
+    border-radius: 60px;
+    width: 65%;
+    height: 170px;
+    margin-top: 70px;
+    
+}
+
+.usname{
+    padding: 20px;
 }
