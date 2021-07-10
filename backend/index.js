@@ -8,7 +8,7 @@ dotenv.config();
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://pinned:pinned@cluster0.di3g9.mongodb.net/blog?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGO_URL,
     {useNewUrlParser: true, 
     useUnifiedTopology: true,
     useCreateIndex:true,
