@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import blog from "../images/blog.jpg"
 import "./singlepost.css"
-
+import {Link} from "react-router-dom"
 export default function singlepost() {
+
+    const location=useLocation();
+    const path=location.pathname.splice("/")[2];
+    const [post,setPost]=useState({});
+    useEffect(()=>{
+        const getPost=async()=>{
+            const res=await axios.get("/posts"+path);
+            setPost(res.data);
+        }
+        getPost();
+    },[path])
     return (
        
         
@@ -18,54 +30,31 @@ export default function singlepost() {
             </div>
 
             <div className="singlepostcontainer">
-               
-                <img src={blog} 
-                alt="" 
-                className="singlepostimg"/>
-              
+
+               {post.photo && (
+                    <img src={post.photo} 
+                    alt="" 
+                    className="singlepostimg"/>
+               )}
+                
                 <h1 className="singleposttitle">
-                    NBA Updates
+                    {post.title}
                 <div className="SinglePostEdit">
                     <i className="SinglePostIcon far fa-edit">Edit</i>
                     <i className="SinglePostIcon far fa-trash-alt">Delete</i>
                 </div>
                 </h1>
                 <div className="singlepostinfo">
-                    <span className="singlepostauthor">Author: <b>XYZ</b></span>
-                    <span className="singlepostdate">1 minute ago</span>
+                    <span className="singlepostauthor">
+                        Author: 
+                        <Link to={`/?user=${post.username}`}>
+                            <b>{post.username}</b>
+                        </Link>      
+                    </span>
+                    <span className="singlepostdate">{new Date(post.createdAt).toDateString()}</span>
                 </div>
                 <p className="singlepostdesc">
-                Columbus built it, and they came. For more than 130 
-                years fans have filled stadium and arena seats to watch
-                their teams play. From the "House that Harley Built" to 
-                Nationwide Arena, the Arch City has a long history of 
-                housing everything from football games and Rolling Stones 
-                concerts to NHL games, professional wrestling matches and 
-                Billy Graham crusades.Columbus built it, and they came. For more than 130 
-                years fans have filled stadium and arena seats to watch
-                their teams play. From the "House that Harley Built" to 
-                Nationwide Arena, the Arch City has a long history of 
-                housing everything from football games and Rolling Stones 
-                concerts to NHL games, professional wrestling matches and 
-                Billy Graham crusades.Columbus built it, and they came. For more than 130 
-                years fans have filled stadium and arena seats to watch
-                their teams play. From the "House that Harley Built" to 
-                Nationwide Arena, the Arch City has a long history of 
-                housing everything from football games and Rolling Stones 
-                concerts to NHL games, professional wrestling matches and 
-                Billy Graham crusades.Columbus built it, and they came. For more than 130 
-                years fans have filled stadium and arena seats to watch
-                their teams play. From the "House that Harley Built" to 
-                Nationwide Arena, the Arch City has a long history of 
-                housing everything from football games and Rolling Stones 
-                concerts to NHL games, professional wrestling matches and 
-                Billy Graham crusades.Columbus built it, and they came. For more than 130 
-                years fans have filled stadium and arena seats to watch
-                their teams play. From the "House that Harley Built" to 
-                Nationwide Arena, the Arch City has a long history of 
-                housing everything from football games and Rolling Stones 
-                concerts to NHL games, professional wrestling matches and 
-                Billy Graham crusades.
+                    {post.desc}
                 </p>
             </div>
             
