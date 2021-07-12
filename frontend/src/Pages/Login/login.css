@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.loginbutton:disabled{
+    cursor: not-allowed;
+}
+
 .loginbutton:hover{
     color: red;
 }

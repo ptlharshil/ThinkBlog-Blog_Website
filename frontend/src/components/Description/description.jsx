@@ -21,7 +21,7 @@ export default function description() {
             <h1 className="description">Categories</h1>
             <ul className="list">
                 {cat.map((c)=>(
-                    <Link to={`/?cat=${c.name}`}>
+                    <Link to={`/posts/?cat=${c.name}`}>
                         <li className="items music">{c.name}</li>
                     </Link>
                 ))}

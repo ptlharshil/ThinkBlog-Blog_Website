@@ -8,6 +8,19 @@ export default function singlepost() {
     const location=useLocation();
     const path=location.pathname.splice("/")[2];
     const [post,setPost]=useState({});
+    const [cat,setCat]=useState([])
+
+    useEffect(() => {
+        
+        const getCat=async()=>{
+            const res= await axios.get("/categories"+path)
+            setCat(res.data)
+        }
+
+        getCat()
+    }, []);
+
+
     useEffect(()=>{
         const getPost=async()=>{
             const res=await axios.get("/posts"+path);
@@ -24,9 +37,16 @@ export default function singlepost() {
             <div className="singlesidebar">
             
             <img src={blog} alt="" id="pp" />
-            <h4 className="usname">Author: XYZ</h4>
-            <h4 className="ctname">Category: Sport</h4>
-            
+            <h4 className="usname">Author: 
+                <Link to={`/posts/?user=${post.username}`}>
+                    <b>{post.username}</b>
+                </Link> 
+            </h4>
+            {cat.map((c)=>(
+                <Link to={`/posts/?cat=${c.name}`}>
+                    <h4 className="ctname">{cat.name}</h4>
+                </Link>
+            ))}
             </div>
 
             <div className="singlepostcontainer">
@@ -47,7 +67,7 @@ export default function singlepost() {
                 <div className="singlepostinfo">
                     <span className="singlepostauthor">
                         Author: 
-                        <Link to={`/?user=${post.username}`}>
+                        <Link to={`/posts/?user=${post.username}`}>
                             <b>{post.username}</b>
                         </Link>      
                     </span>
