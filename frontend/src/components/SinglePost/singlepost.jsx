@@ -1,14 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import blog from "../images/blog.jpg"
 import "./singlepost.css"
 import {Link} from "react-router-dom"
-export default function singlepost() {
+import { Context } from '../../context/Context'
+import { useContext } from 'react'
+import axios from 'axios'
+import { update } from '../../../../backend/models/User'
 
+export default function singlepost() {
+    const PF="http://localhost:5000/images/"
     const location=useLocation();
     const path=location.pathname.splice("/")[2];
     const [post,setPost]=useState({});
     const [cat,setCat]=useState([])
+    const {user}=useContext(Context);
+    const [title,setTitle]=useState("");
+    const [desc, setDesc]=useState("");
+    const [updateMode, setUpdateMode]=useState(false);
 
     useEffect(() => {
         
@@ -25,9 +34,34 @@ export default function singlepost() {
         const getPost=async()=>{
             const res=await axios.get("/posts"+path);
             setPost(res.data);
+            setTitle(res.data.title)
+            setDesc(res.data.desc)
         }
         getPost();
     },[path])
+
+
+    const handleDelete =async()=>{
+        try{
+            await axios.delete(`/posts/${post._id}`, {data: {username:user.username}
+        });
+            window.location.replace("/posts");
+        }catch(err){
+
+        }
+        
+    }
+
+    const handleUpdate = async ()=>{
+        try{
+            await axios.put(`/posts/${post._id}`, {
+                data:{username:user.username, title, desc}
+            })
+        }catch(err)
+        {
+
+        }
+    }
     return (
        
         
@@ -52,18 +86,26 @@ export default function singlepost() {
             <div className="singlepostcontainer">
 
                {post.photo && (
-                    <img src={post.photo} 
+                    <img src={PF+ post.photo} 
                     alt="" 
                     className="singlepostimg"/>
                )}
+
+                {updateMode ? (<input type="text" value={title} className="singleposttitle" onChange={(e)=>setTitle(e.target.value)}/> ):(
+
                 
                 <h1 className="singleposttitle">
                     {post.title}
+
+                {post.username===user?.username && (    
                 <div className="SinglePostEdit">
-                    <i className="SinglePostIcon far fa-edit">Edit</i>
-                    <i className="SinglePostIcon far fa-trash-alt">Delete</i>
+                    <i className="SinglePostIcon far fa-edit" onClick={()=>setUpdateMode(true)}>Edit</i>
+                    <i className="SinglePostIcon far fa-trash-alt" onClick={handleDelete}>Delete</i>
                 </div>
+                )}
                 </h1>
+                )}
+
                 <div className="singlepostinfo">
                     <span className="singlepostauthor">
                         Author: 
@@ -73,9 +115,12 @@ export default function singlepost() {
                     </span>
                     <span className="singlepostdate">{new Date(post.createdAt).toDateString()}</span>
                 </div>
+                {updateMode ? (<textarea className="singlepostdesc" value={desc} onChange={(e)=>setDesc(e.target.value)}/>):(
                 <p className="singlepostdesc">
                     {post.desc}
                 </p>
+                )}
+                <button className="singlePostButton" onClick={handleUpdate}>Update</button>
             </div>
             
         </div>

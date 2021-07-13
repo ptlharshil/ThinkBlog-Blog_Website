@@ -89,3 +89,11 @@
 .usname{
     padding: 20px;
 }
+
+.singlePostButton{
+    border: none;
+    background: none;
+    color: teal;
+    width: 100px;
+    padding: 5px;
+}
