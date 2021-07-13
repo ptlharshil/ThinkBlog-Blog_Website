@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 import { Context } from '../../context/Context'
 import { useContext } from 'react'
 import axios from 'axios'
-import { update } from '../../../../backend/models/User'
+// import { update } from '../../../../backend/models/User'
 
 export default function singlepost() {
     const PF="http://localhost:5000/images/"
@@ -22,7 +22,7 @@ export default function singlepost() {
     useEffect(() => {
         
         const getCat=async()=>{
-            const res= await axios.get("/categories"+path)
+            const res= await axios.get("/categories/"+path)
             setCat(res.data)
         }
 
@@ -32,7 +32,7 @@ export default function singlepost() {
 
     useEffect(()=>{
         const getPost=async()=>{
-            const res=await axios.get("/posts"+path);
+            const res=await axios.get("/posts/"+path);
             setPost(res.data);
             setTitle(res.data.title)
             setDesc(res.data.desc)
@@ -57,6 +57,7 @@ export default function singlepost() {
             await axios.put(`/posts/${post._id}`, {
                 data:{username:user.username, title, desc}
             })
+            setUpdateMode(false);
         }catch(err)
         {
 
@@ -70,7 +71,8 @@ export default function singlepost() {
 
             <div className="singlesidebar">
             
-            <img src={blog} alt="" id="pp" />
+            <img src={PF+user.profilePic} alt="" id="pp" />
+
             <h4 className="usname">Author: 
                 <Link to={`/posts/?user=${post.username}`}>
                     <b>{post.username}</b>
@@ -95,7 +97,7 @@ export default function singlepost() {
 
                 
                 <h1 className="singleposttitle">
-                    {post.title}
+                    {title}
 
                 {post.username===user?.username && (    
                 <div className="SinglePostEdit">
@@ -117,10 +119,12 @@ export default function singlepost() {
                 </div>
                 {updateMode ? (<textarea className="singlepostdesc" value={desc} onChange={(e)=>setDesc(e.target.value)}/>):(
                 <p className="singlepostdesc">
-                    {post.desc}
+                    {desc}
                 </p>
                 )}
+                {updateMode && (
                 <button className="singlePostButton" onClick={handleUpdate}>Update</button>
+                )}
             </div>
             
         </div>
